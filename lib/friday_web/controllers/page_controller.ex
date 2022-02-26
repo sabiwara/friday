@@ -1,7 +1,18 @@
 defmodule FridayWeb.PageController do
   use FridayWeb, :controller
 
-  def index(conn, _params) do
-    render(conn, "index.html")
+  alias Friday.Context
+
+  def index(conn, params) do
+    {:ok, country} =
+      params
+      |> Map.get("country", "jp")
+      |> Context.validate_country()
+
+    message = Context.describe_today(country)
+
+    conn
+    |> assign(:message, message)
+    |> render("index.html")
   end
 end
