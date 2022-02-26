@@ -46,7 +46,8 @@ defmodule Friday.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:tzdata, "~> 1.1"}
+      {:tzdata, "~> 1.1"},
+      {:mox, "~> 1.0"}
     ]
   end
 

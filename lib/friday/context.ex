@@ -1,4 +1,6 @@
 defmodule Friday.Context do
+  alias Friday.Clock
+
   @type country :: :jp | :fr
   @friday 5
 
@@ -6,7 +8,7 @@ defmodule Friday.Context do
   def describe_today(country) do
     timezone = get_timezone(country)
 
-    DateTime.utc_now()
+    Clock.utc_now()
     |> DateTime.shift_zone!(timezone)
     |> DateTime.to_date()
     |> Date.day_of_week()
