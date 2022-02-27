@@ -7,6 +7,8 @@ config :friday, FridayWeb.Endpoint,
   secret_key_base: "1jn7/kjtiYwWxjStprwiJy2aE2s82ITo2YNY24b5QDiTzrM1UflQbwHVYsKFC1dh",
   server: false
 
+config :friday, :clock, Friday.MockClock
+
 # In test we don't send emails.
 config :friday, Friday.Mailer,
   adapter: Swoosh.Adapters.Test
