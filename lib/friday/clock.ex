@@ -1,11 +1,9 @@
 defmodule Friday.Clock do
   @callback utc_now :: DateTime.t()
 
-  def utc_now do
-    clock_module().utc_now()
-  end
+  @clock_module Application.compile_env(:friday, :clock, DateTime)
 
-  defp clock_module do
-    Application.get_env(:friday, :clock, DateTime)
+  def utc_now do
+    @clock_module.utc_now()
   end
 end
