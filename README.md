@@ -1,5 +1,9 @@
 # Friday
 
+Example project to illustrate different approaches for mocking the current time in Elixir.
+
+See pull requests to see these approaches.
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
