@@ -1,5 +1,5 @@
 defmodule FridayWeb.PageControllerTest do
-  use FridayWeb.ConnCase
+  use FridayWeb.ConnCase, async: true
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
